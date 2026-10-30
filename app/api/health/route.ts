@@ -6,7 +6,7 @@ export async function GET() {
   let db = "disconnected";
   let cache = "disconnected";
   try {
-    await prisma.`SELECT 1`;
+    await prisma.$queryRaw`SELECT 1`;
     db = "connected";
   } catch (e: any) { db = "error: " + e.message; }
   try {
